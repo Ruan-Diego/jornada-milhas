@@ -5,10 +5,10 @@ The goal of this project is to improve front-end architecture through reusable U
 
 💡 Key concepts:
 
-Component-based development
+- Component-based development
 
-Angular Material UI design
+- Angular Material UI design
 
-Reusable and scalable structure
+- Reusable and scalable structure
 
-Consistent and modern user interface
+- Consistent and modern user interface
