@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-banner',
@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class BannerComponent {
 
+    @Input() src: string = 'assets/imagens/banner-homepage.png';
+    @Input() alt: string = 'Banner';
 }
