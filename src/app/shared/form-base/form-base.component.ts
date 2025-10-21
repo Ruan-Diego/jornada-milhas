@@ -11,8 +11,11 @@ import { FormValidation } from '../form-validation';
 })
 export class FormBaseComponent implements OnInit {
 
-  @Input() perfilComponent!: boolean;
-  @Output() acaoClique: EventEmitter<any> = new EventEmitter<any>;
+  @Input() perfilComponent: boolean = false;
+  @Input() titulo: string = 'Crie sua conta';
+  @Input() textoBotao: string = 'CADASTRAR';
+  @Output() acaoClique: EventEmitter<any> = new EventEmitter<any>()
+  @Output() sair: EventEmitter<any> = new EventEmitter<any>()
   cadastroForm!: FormGroup;
   estadoControl = new FormControl<UnidadeFederativa | null>(null, Validators.required);
 
@@ -33,14 +36,24 @@ constructor(
       telefone: [null, Validators.required],
       estado: this.estadoControl,
       confirmarEmail: [null, [Validators.required, Validators.email, FormValidation.equalTo('email')]],
-      confirmarSenha: [null, [Validators.required, Validators.minLength(3), FormValidation.equalTo('email')]],
-      aceitarTermos: [null, [Validators.requiredTrue]]
+      confirmarSenha: [null, [Validators.required, Validators.minLength(3), FormValidation.equalTo('senha')]],
+      aceitarTermos: [null]
     });
 
+    if(this.perfilComponent) {
+      this.cadastroForm.get('aceitarTermos')?.setValidators(null);
+    } else {
+      this.cadastroForm.get('aceitarTermos')?.setValidators(Validators.requiredTrue);
+    }
+    this.cadastroForm.get('aceitarTermos')?.updateValueAndValidity();
     this.formularioService.setCadastro(this.cadastroForm)
   }
 
   executarAcao() {
     this.acaoClique.emit();
+  }
+
+  deslogar(){
+    this.sair.emit()
   }
 }
