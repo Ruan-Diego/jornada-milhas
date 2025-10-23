@@ -24,6 +24,10 @@ const routes: Routes = [
     component: PerfilComponent,
     canActivate: [authGuard]
   },
+  {
+    path: 'busca',
+    component: BuscaComponent
+  }
 ];
 
 @NgModule({
