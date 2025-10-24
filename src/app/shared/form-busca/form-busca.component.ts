@@ -11,8 +11,12 @@ export class FormBuscaComponent {
   constructor(
     public _formBuscaService : FormBuscaService) {}
 
-  buscar () {
-    const formBuscaValue = this._formBuscaService.formBusca.value
-    this.realizarBusca.emit(formBuscaValue);
+  buscar() {
+    if (this._formBuscaService.formEstaValido) {
+      const formBuscavalue = this._formBuscaService.obterDadosBusca();
+      this.realizarBusca.emit(formBuscavalue);
+    } else {
+      alert('O formulário precisa ser preenchido')
+    }
   }
 }
