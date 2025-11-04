@@ -20,6 +20,7 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatIconModule} from '@angular/material/icon';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSliderModule} from '@angular/material/slider';
 import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -43,6 +44,11 @@ import { PerfilComponent } from './pages/perfil/perfil.component';
 import { AutenticacaoInterceptor } from './core/interceptors/autenticacao.interceptor';
 import { BuscaComponent } from './pages/busca/busca.component';
 import { PassagemComponent } from './shared/passagem/passagem.component';
+import { FiltrosComplementaresComponent } from './shared/form-busca/filtros-complementares/filtros-complementares.component';
+import { CompanhiasComponent } from './shared/form-busca/filtros-complementares/companhias/companhias.component';
+import { ParadasComponent } from './shared/form-busca/filtros-complementares/paradas/paradas.component';
+import { PrecosComponent } from './shared/form-busca/filtros-complementares/precos/precos.component';
+import { LabelComponent } from './shared/form-busca/filtros-complementares/label/label.component';
 
 
 @NgModule({
@@ -69,6 +75,11 @@ import { PassagemComponent } from './shared/passagem/passagem.component';
     PerfilComponent,
     BuscaComponent,
     PassagemComponent,
+    FiltrosComplementaresComponent,
+    CompanhiasComponent,
+    ParadasComponent,
+    PrecosComponent,
+    LabelComponent,
   ],
   imports: [
     BrowserModule,
@@ -91,6 +102,7 @@ import { PassagemComponent } from './shared/passagem/passagem.component';
     MatDividerModule,
     MatRadioModule,
     MatCheckboxModule,
+    MatSliderModule,
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
