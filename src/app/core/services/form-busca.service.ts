@@ -102,7 +102,7 @@ export class FormBuscaService {
     if(precoMinControl.value){
       dadosBusca.precoMin = precoMinControl.value
     }
-    const precoMaxControl = this.obterControle<number>('precoMin')
+    const precoMaxControl = this.obterControle<number>('precoMax')
     if(precoMaxControl.value){
       dadosBusca.precoMax = precoMaxControl.value
     }
