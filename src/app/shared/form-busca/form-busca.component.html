@@ -12,7 +12,6 @@
           SOMENTE IDA
         </mat-button-toggle>
       </mat-button-toggle-group>
-
       <mat-chip (click)="_formBuscaService.openDialog()">
         <div class="inner">
           <mat-icon>check</mat-icon> {{_formBuscaService.getDescricaoPassageiros()}}
@@ -23,6 +22,7 @@
           <mat-icon>check</mat-icon> {{_formBuscaService.obterControle('tipo').value}}
         </div>
       </mat-chip>
+      <button mat-flat-button style="border: 1px solid #673ab7;" (click)="limparFiltros()">Limpar filtros</button>
     </div>
 
     <div class="flex-container">

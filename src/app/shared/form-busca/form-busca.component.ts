@@ -19,4 +19,10 @@ export class FormBuscaComponent {
       alert('O formulário precisa ser preenchido')
     }
   }
+
+  limparFiltros() {
+    this._formBuscaService.resetarFiltros();
+
+  }
+
 }
